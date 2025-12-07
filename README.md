@@ -1,21 +1,70 @@
-<<<<<<< HEAD
-# React + Vite
+# Tic Tac Toe (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Tic Tac Toe game built with React. Includes a Reset button to restart the game and uses react-toastify to display winner / draw notifications.
 
-Currently, two official plugins are available:
+## Features
+- 3x3 Tic Tac Toe gameplay
+- Player turns (X and O)
+- Reset button to restart the board and scores
+- Winner / draw notifications via react-toastify
+- Simple, minimal UI using functional components and hooks
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo
+Run locally (instructions below) to play and see toast notifications for:
+- Winner (e.g., "Player X wins!")
+- Draw ("It's a draw!")
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Prerequisites
+- Node.js (>= 14)
+- npm or yarn
 
-## Expanding the ESLint configuration
+Install and run
+1. Clone the repo:
+    git clone <repo-url>
+2. Install dependencies:
+    cd tic-tac-toe
+    npm install
+3. Start the dev server:
+    npm start
+4. Open http://localhost:3000 in your browser
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# tic-tac-toe-react
-Tic Tac Toe game based on ReactJS
->>>>>>> e329f8f50fa0d940076e9fa2a77fd0348f64b3ad
+Build for production
+- npm run build
+
+## Usage
+- Click any empty cell to place the current player's mark (X or O).
+- The game will automatically detect a winner or draw and show a toast notification.
+- Click the "Reset" button to clear the board and reset the game state.
+
+## Implementation notes
+- React functional components + hooks (useState, useEffect)
+- react-toastify for notifications:
+  - Toasts are triggered when a win or draw condition is met.
+  - Example toast usage:
+     import { toast } from 'react-toastify';
+     toast.success('Player X wins!');
+- Reset logic clears the board state and current player, and optionally resets scores.
+
+## Project structure (example)
+- src/
+  - components/
+     - Board.jsx
+     - Square.jsx
+     - Controls.jsx
+  - App.jsx
+  - index.jsx
+- public/
+- package.json
+
+## Customization
+- Change toast appearance in ToastContainer config (position, autoClose, theme).
+- Add score tracking in state to persist wins between rounds.
+- Add AI opponent (minimax or simple heuristics).
+
+## Contributing
+Contributions welcome — open an issue or PR with improvements or bug fixes.
+
+## License
+MIT
